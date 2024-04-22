@@ -19,25 +19,28 @@
 CREATE DATABASE IF NOT EXISTS `db_contactos` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `db_contactos`;
 
--- Volcando estructura para tabla db_contactos.contactos
-CREATE TABLE IF NOT EXISTS `contactos` (
+-- Volcando estructura para tabla db_contactos.tcontactosxusuarios
+CREATE TABLE IF NOT EXISTS `tcontactosxusuarios` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nombre` text NOT NULL,
-  `telefono` text NOT NULL,
-  `correo` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `nombre` text,
+  `telefono` text,
+  `correo` text,
+  `id_usuario` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_usuario` (`id_usuario`),
+  CONSTRAINT `tcontactosxusuarios_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `tusuarios` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- La exportación de datos fue deseleccionada.
 
--- Volcando estructura para tabla db_contactos.usuarios
-CREATE TABLE IF NOT EXISTS `usuarios` (
+-- Volcando estructura para tabla db_contactos.tusuarios
+CREATE TABLE IF NOT EXISTS `tusuarios` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nombres` text NOT NULL,
-  `nombreUsuario` text NOT NULL,
-  `clave` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `nombre` text,
+  `nombreUsuario` text,
+  `clave` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- La exportación de datos fue deseleccionada.
 

@@ -9,8 +9,8 @@ $correo = $_POST['correo'];
 
 $id_usuario = $_SESSION['id_usuario'];
 
-# Insertar nuevo contacto en la base de datos asociándolo con el ID de usuario
-$sql = "INSERT INTO tcontactosxusuarios (nombre, telefono, correo, id_usuario) VALUES (:nombre, :telefono, :correo, :id_usuario)";
+# Actualizar contacto en la base de datos asociándolo con el ID de usuario
+$sql = "UPDATE tcontactosxusuarios SET nombre = :nombre, telefono = :telefono, correo = :correo WHERE id_usuario = :id_usuario";
 $stmt = $conexion->prepare($sql);
 $stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
 $stmt->bindParam(':telefono', $telefono, PDO::PARAM_INT);
@@ -19,9 +19,9 @@ $stmt->bindParam(':id_usuario', $id_usuario, PDO::PARAM_INT);
 
 try {
     $stmt->execute();
-    echo "<script>alert ('Contacto agregado exitosamente.')</script>";
-    # Redireccionar a la página listar contactos para ver los contactos después de agregarlo
+    echo "<script>alert ('Contacto actualizado exitosamente.')</script>";
+    # Redireccionar a la página listar contactos para ver los contactos después de editar
     header('Location: listar_contactos.php');
 } catch (PDOException $e) {
-    echo "Error al agregar contacto: " . $e->getMessage();
+    echo "Error al editar contacto: " . $e->getMessage();
 }
