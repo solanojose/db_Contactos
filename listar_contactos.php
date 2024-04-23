@@ -52,7 +52,8 @@ else
                 <td><?php echo $contacto['telefono']; ?></td>
                 <td><?php echo $contacto['correo']; ?></td>
                 <td>
-                <a href="formEditarContacto.php?id=<?php echo $contacto['id']; ?>">Editar</a>
+                <a href="formEditarContacto.php?id_contacto=<?php echo $contacto['id']; ?>">Editar</a>
+                <a href="eliminarContacto.php?id_contacto=<?php echo $contacto['id']; ?>" onclick="return confirm('¿Estás seguro de eliminar este contacto?')">Eliminar</a>
                 </td>
             </tr>
             
