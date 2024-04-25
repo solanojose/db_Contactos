@@ -6,7 +6,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_nombreUsuario = $_POST['nombreUsuario'];
     $_clave = $_POST['contraseña'];
 
-    // Validar si el nombre de usuario ya está en uso
     $sql = "SELECT COUNT(*) as count FROM tusuarios WHERE nombreUsuario = :nombreUsuario";
     $stmt = $conexion->prepare($sql);
     $stmt->bindParam(':nombreUsuario', $_nombreUsuario, PDO::PARAM_STR);
@@ -16,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($validarNomUsuario['count'] > 0) {
         echo "El nombre de usuario ya está en uso!!";
     } else {
-        // Insertar nuevo usuario en la base de datos
+        
         $sql_i= "INSERT INTO tusuarios (nombre, nombreUsuario, clave) VALUES (:nombres, :nombreUsuario, :clave)";
         $stmt_i = $conexion->prepare($sql_i);
         $stmt_i->bindParam(':nombres', $_nombres, PDO::PARAM_STR);

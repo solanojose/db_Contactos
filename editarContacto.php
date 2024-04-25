@@ -10,7 +10,7 @@ $correo = $_POST['correo'];
 
 $id_usuario = $_SESSION['id_usuario'];
 
-# Actualizar contacto en la base de datos asociándolo con el ID de usuario
+
 $sql = "UPDATE tcontactosxusuarios SET nombre = :nombre, telefono = :telefono, correo = :correo 
 WHERE id = :id_contacto AND id_usuario = :id_usuario";
 $stmt = $conexion->prepare($sql);
@@ -22,8 +22,7 @@ $stmt->bindParam(':id_usuario', $id_usuario, PDO::PARAM_INT);
 
 try {
     $stmt->execute();
-    echo "<script>alert ('Contacto actualizado exitosamente.')</script>";
-    # Redireccionar a la página listar contactos para ver los contactos después de editar
+    echo "Contacto actualizado exitosamente!!";
     header('Location: listar_contactos.php');
 } catch (PDOException $e) {
     echo "Error al editar contacto: " . $e->getMessage();

@@ -31,7 +31,5 @@ if (isset($_GET['id_contacto'])) {
     } else {
         echo "No tienes permiso, atrevid@.";
     }
-} else {
-    echo "Elija un contacto para eliminar.";
 }
 ?>
