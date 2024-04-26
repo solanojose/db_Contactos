@@ -1,6 +1,9 @@
 <?php
 session_start();
-# Conexión a la base de datos utilizando PDO
+if (!isset($_SESSION['id_usuario'])) {
+    header('Location: inicio_sesion.php');
+}
+
 include_once("conexion.php");
 
 $nombre = $_POST['nombre'];
