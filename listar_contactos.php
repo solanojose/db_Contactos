@@ -42,7 +42,7 @@ if(isset($_SESSION['id_usuario'])) {
             <title>LISTA DE CONTACTOS</title>
         </head>
         <body>
-            <!-- Lista de contactos -->
+       
             <h1>Contactos Registrados</h1>
             <table>
                 <tr>
@@ -52,7 +52,7 @@ if(isset($_SESSION['id_usuario'])) {
                 </tr>
                 <?php foreach ($resultado as $contacto): ?>
                 <tr>
-                    <td><?php echo $contacto['nombre']; ?></td>
+                <td><?php echo $contacto['nombre']; ?></td> -->
                     <td><?php echo $contacto['telefono']; ?></td>
                     <td><?php echo $contacto['correo']; ?></td>
                     <td>
@@ -67,6 +67,10 @@ if(isset($_SESSION['id_usuario'])) {
             <a href="formGuardarContacto.php">Agregar nuevo contacto</a>  
             <br/>
             <a href="cerrarSesion.php">Cerrar sesión</a>
+            <br/>
+            <a href="formRecuperarSesion.php">Bloquear sesión</a>
+            <br/>
+           
 
         </body>
         </html>
