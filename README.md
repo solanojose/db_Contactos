@@ -1,6 +1,6 @@
 # Gestion de Contactos
 
-## Requerimientos Funcioanales
+## Requerimientos Funcionales
 1. [Descripción](#Descripción)
 
 El siguiente documento contiene información pertinente sobre la app para la gestión de contactos.
