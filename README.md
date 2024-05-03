@@ -1,7 +1,6 @@
 # Gestion de contactos
-GESTIONAR CONTACTOS REQUERIMIENTOS
 
-## Tabla de contenidos
+## RUQUERIMIENTOS FUNCIONALES
 1. [Descripción](#Descripción)
 
 El siguiente documento contiene información pertinente sobre la app para la gestión de contactos.
